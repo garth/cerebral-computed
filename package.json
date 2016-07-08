@@ -1,13 +1,12 @@
 {
   "name": "cerebral-computed",
   "version": "0.1.1",
-  "description": "Package to let cerebral view packages expose computed feature",
+  "description": "Package to expose computed cerebral state",
   "main": "index.js",
   "scripts": {
-    "pretest": "npm run build",
-    "test": "nodeunit tests",
-    "build": "tsc",
-    "prepublish": "npm run build"
+    "lint": "standard 'index.js'--verbose | snazzy || true",
+    "pretest": "npm run lint",
+    "test": "nodeunit tests"
   },
   "repository": {
     "type": "git",
@@ -20,39 +19,15 @@
   },
   "homepage": "https://github.com/cerebral/cerebral-computed#readme",
   "devDependencies": {
-    "cerebral": "^0.33.0 || ^0.34.0-0",
-    "commitizen": "^2.5.0",
-    "conventional-changelog": "0.0.17",
-    "cz-customizable": "^2.7.1",
-    "ghooks": "^1.0.3",
-    "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0",
-    "semantic-release": "^4.3.5",
-    "standard": "^5.4.1",
-    "typescript": "^1.8.10",
-    "validate-commit-msg": "^1.1.1"
+    "cerebral": "^0.35.0-beta.5",
+    "cerebral-model-immutable": "^0.1.0",
+    "nodeunit": "^0.9.1",
+    "standard": "^7.1.2"
   },
   "peerDependencies": {
-    "cerebral": "^0.33.0 || ^0.34.0-0",
-    "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    },
-    "ghooks": {
-      "commit-msg": "validate-commit-msg"
-    }
-  },
-  "release": {
-    "analyzeCommits": "./sr-prerelease.js"
+    "cerebral": "^0.35.0-beta.5"
   },
   "dependencies": {
-    "lodash.get": "^4.0.0"
-  },
-  "files": [
-    "lib/",
-    "index.js"
-  ]
+    "lodash": "^4.0.0"
+  }
 }
